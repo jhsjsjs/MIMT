@@ -1,0 +1,54 @@
+{
+    "Configuration": {
+        "Author": "BurpSuite",
+        "Version": "4.0"
+    },
+    "Arguments": {
+        "MITM": "true,41FF20AF,https://raw.githubusercontent.com/jhsjsjs/MIMT/master/MIMT",
+        "External": "true,BurpSuite@0.0.0.0:6170",
+        "MacOS": "true,1.2.3.4,5.6.7.8,3040,5030",
+        "DNS": "true,223.5.5.5,223.6.6.6,119.29.29.29,114.114.114.114"
+    },
+    "General": {
+        "EnhancedMode": true,
+        "ExcludeHost": true,
+        "WIFIAccess": true,
+        "Replica": false,
+        "URLREGEX": true,
+        "IPCIDR6": true,
+        "USERAGENT": true,
+        "IPV6": false,
+        "Rule": true
+    },
+    "Info": {
+        "SERVER": [
+			"01,custom,52.196.129.25,63422,rc4-md5,Kf8Qsf,[Module]",
+            "02,custom,jp2.ssnode.link,44684,chacha20,8UolSjzZ,[Module]",
+            "03,custom,139.59.28.137,26610,aes-256-cfb,lcU6eDoQ,[Module]",
+            "04,custom,sg.ssnode.link,44684,chacha20,8UolSjzZ,[Module]",
+            "05,custom,jp.ssnode.link,44684,chacha20,8UolSjzZ,[Module]",
+            "06,custom,mikumo.ssnode.link,44684,chacha20,8UolSjzZ,[Module]"
+        ],
+        "Group": [
+				"Proxya = select,01,02,03,04,05,06",
+                "Proxyb = select,01,02,03,04,05",
+                "Proxyc = select,01,02,03,04",
+                "Proxyd = select,01,02,03",
+                "Autoxy = url-test,01,02,url = http://www.gstatic.com/generate_204, interval = 600, tolerance = 200, timeout = 5"
+        ]
+    },
+    "SUFFIX": {
+        "Apple": "Proxyd",
+        "Proxy": "Autoxy",
+        "KEYWORD": "Proxyb",
+        "URLREGEX": "Proxyb",
+        "USERAGENT": "Proxya",
+        "IPCIDR6": "Proxyc",
+        "IPCIDR": "Proxyc",
+        "Other": "Autoxy"
+    },
+    "Other": {
+        "Module": "https://raw.githubusercontent.com/BurpSuite/RuleList/master/Module/Module",
+        "List": "https://raw.githubusercontent.com/BurpSuite/RuleList/master/Developers.json"
+    }
+}
